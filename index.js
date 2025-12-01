@@ -10,9 +10,9 @@ if (saved){
     links = []
 }
 // localStorage.clear()
-render()
+renderLink()
 
-function render() {
+function renderLink() {
     bookmarkList.innerHTML = ''
     links.forEach((link, index) => {
         const li = document.createElement('li')
@@ -38,13 +38,13 @@ function render() {
 
 function deleteLink(index) {
     links.splice(index, 1)
-    render()
+    renderLink()
 }
 
 addBookmarkBtn.addEventListener('click', () => {
     const value = bookmarkInput.value
     links.push(value)
-    render()
+    renderLink()
     bookmarkInput.value = " "
 })
 
@@ -66,7 +66,7 @@ const username = document.getElementById('username')
 const password = document.getElementById('password')
 const saveBtn = document.getElementById('saveBtn')
 
-function render2() {
+function render() {
     username.value = JSON.parse(localStorage.getItem('user'))
     password.value = JSON.parse(localStorage.getItem('pass'))
 }
@@ -81,4 +81,5 @@ saveBtn.addEventListener('click', () => {
     password.value = ''
 })
 
-render2()
+render()
+
