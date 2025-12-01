@@ -66,7 +66,7 @@ const username = document.getElementById('username')
 const password = document.getElementById('password')
 const saveBtn = document.getElementById('saveBtn')
 
-function render() {
+function render2() {
     username.value = JSON.parse(localStorage.getItem('user'))
     password.value = JSON.parse(localStorage.getItem('pass'))
 }
@@ -81,4 +81,4 @@ saveBtn.addEventListener('click', () => {
     password.value = ''
 })
 
-render()
+render2()
